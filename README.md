@@ -1,2 +1,3 @@
 # In-the-beginning...
 ideas to be built
+hello, my name is Cardinallop, i'm a new programmer. 
