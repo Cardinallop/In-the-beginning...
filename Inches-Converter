@@ -1,0 +1,69 @@
+package hello;
+import java.awt.*;
+import java.awt.event.*;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JTextField;
+
+
+public class Converter extends JFrame {
+
+	private JLabel label;
+	private JLabel resultlabel;
+	private JButton button;
+	private JTextField textfield;
+	int inch;
+	double cm;
+	
+	public Converter () {
+		
+		setLayout(new FlowLayout());
+		
+		label = new JLabel("Inches");
+		add(label);
+		
+		textfield = new JTextField(20);
+		add(textfield);
+		
+		button = new JButton("Convert");
+		add(button);
+		
+		resultlabel = new JLabel("");
+		add(resultlabel);
+		
+		Conversion con = new Conversion();
+		button.addActionListener(con);
+		
+			
+	}
+	
+	public class Conversion implements ActionListener {
+		
+		public void actionPerformed(ActionEvent con) {
+			
+			
+			
+			inch = (int)(Double.parseDouble(textfield.getText()));
+			
+			cm = inch*(2.54);
+			
+			resultlabel.setText( cm+ " centimeters.");
+			
+		}
+	}
+	
+	public static void main(String[] args) {
+		
+		Converter conv = new Converter();
+		
+		conv.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		conv.setSize(500,100);
+		conv.setVisible(true);
+		conv.setTitle("Converter");
+		
+		
+		
+	}
+
+}
