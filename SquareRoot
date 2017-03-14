@@ -1,0 +1,34 @@
+import java.util.Scanner;
+public class Exercise {
+
+	public static void SquareRoot(double N, double g){
+		
+		while(true){
+			
+			double g1 = (g + N/g)/2;
+		
+			System.out.println(g1);
+		
+		if((g/g1)==1){
+			
+			break;
+			
+			}
+		
+			g = g1;
+		
+		}
+		
+		System.out.printf("The square root of %.10f is %.10f", N, g);
+	}
+	
+	public static void main(String[] args) {
+		
+		Scanner in = new Scanner(System.in);
+		
+		System.out.print("Enter the numbers: ");
+			
+		SquareRoot(in.nextDouble(),in.nextDouble());
+		
+	}
+}
